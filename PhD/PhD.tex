@@ -1,0 +1,182 @@
+
+%----------------+
+%  Ph.D. Thesis  |
+%----------------+
+
+%--------------------------+
+%  \tiny          5pt      |
+%  \scriptsize    7pt      |
+%  \footnotesize  8pt      |
+%  \small         9pt      |
+%  \normalsize    10pt     |
+%  \large         12pt     |
+%  \Large         14.4pt   |
+%  \LARGE         17.28pt  |
+%  \huge          20.74pt  |
+%  \Huge          24.88pt  |
+%--------------------------+
+
+%	(j / js)article, report, book, etc.
+\documentclass[12pt, twoside, titlepage]{article}
+
+%	Driver that generates PDF from DVI, Important to insert images
+\usepackage[dvipdfmx]{graphicx}
+
+%	Link
+\usepackage[dvipdfmx]{hyperref}
+
+%	Important to change the style of each page
+\usepackage{fancyhdr}
+
+%	Space
+\usepackage[top=25truemm, bottom=25truemm, left=25truemm, right=25truemm]{geometry}
+
+%	Size of section & subsection
+\usepackage{titlesec}
+\titleformat*{\section}{\huge\bfseries}
+\titleformat*{\subsection}{\LARGE\bfseries}
+\titleformat*{\subsubsection}{\Large\bfseries}
+
+%	Having to do with the position of image
+\usepackage{float}
+
+%	Amssymb & Amsmath
+\usepackage{amssymb, amsmath}
+
+%	Braket
+\usepackage{braket}
+
+%	Comment
+\usepackage{comment}
+
+%	Cite
+\usepackage{cite}
+
+%	Here
+\usepackage{here}
+
+%	Listings
+\usepackage{listings}
+
+\lstset{
+language={C++}, 
+basicstyle      = {\tt\normalsize},
+identifierstyle = {\tt\normalsize},
+commentstyle    = {\tt\normalsize \color[rgb]{0,0.5,0}},
+keywordstyle    = {\tt\normalsize \color[rgb]{0,0,0}},
+ndkeywordstyle  = {\tt\normalsize},
+stringstyle     = {\tt\normalsize},
+frame           = {tblr},
+breaklines      = true,
+breakindent     = 50.6pt,
+captionpos      = b
+columns         = [l]{fullflexible},
+morecomment     = [l]{//},
+numbers         = none,
+numbersep       = 1zw,
+numberstyle     = {\scriptsize},
+stepnumber      = 1,
+}
+
+%	Times new roman
+\usepackage{times}
+
+%	URL
+\usepackage{url}
+\urlstyle{rm}
+
+%	Physics
+%	\usepackage{physics}
+
+%	Character corruption
+\usepackage{pxjahyper}
+\hypersetup{colorlinks=true, linkcolor=black, citecolor=blue}
+
+%	Equation, figure and table number
+\makeatletter
+\@addtoreset{equation}{section}
+\@addtoreset{figure}{section}
+\@addtoreset{table}{section}
+\def\theequation{\thesection.\arabic{equation}}
+\def\thefigure{\thesection.\arabic{figure}}
+\def\thetable{\thesection.\arabic{table}}
+\makeatother
+
+%	Important formulas
+\newcommand{\bd}{{\rm n} \to {\rm p}+{\rm e}^{-}+\overline{\nu}_{{\rm e}}}
+\newcommand{\ibd}{\overline{\nu}_{{\rm e}}\,+\,{\rm p} \to {\rm e}^{+}\,+\,{\rm n}}
+\newcommand{\hs}{\hspace{3mm}}
+\newcommand{\vs}{\vspace{3mm}}
+
+%	Space between the lines
+\renewcommand{\baselinestretch}{1.15}
+
+%	Set of notes
+\renewcommand\thefootnote{\arabic{footnote}}
+
+%	Header and footer
+\pagestyle{fancy}
+\newcommand{\Headerfooter}[1]{
+\lhead[{\bf \thepage}]{}
+\rhead[\thesection. #1]{{\bf \thepage}}
+\cfoot[]{}
+}
+\newcommand{\Noheaderfooter}{
+\lhead[{\bf \thepage}]{}
+\rhead[]{{\bf \thepage}}
+\cfoot[]{}
+}
+
+%	Title page
+\title{\fontsize{20pt}{40pt}\textbf{Measurement of the neutrino-oxygen}\\\textbf{neutral-current quasielastic cross section using}\\\textbf{atmospheric neutrinos in the SK-Gd experiment}}
+\author{{\Large Graduate School of Natural Science and Technology}\vspace{2mm}\\{\Large Okayama University}\vspace{10mm}\\ \fontsize{20pt}{40pt}\selectfont Seiya Sakai}
+\date{\vspace{3mm}{\Large March 1, 2024}}
+
+%------------+
+%  Document  |
+%------------+
+
+\begin{document}
+\parindent=0pt
+
+%	Title
+\maketitle
+
+%	Abstract
+\include{Contents/Abstract/Abstract}
+
+%	Acknowledgments
+\include{Contents/Acknowledgments/Acknowledgments}
+
+%	Table of contents & List of figures & List of tables
+\pagenumbering{roman}
+\setcounter{tocdepth}{3}
+\Noheaderfooter
+\tableofcontents
+\listoffigures
+\listoftables
+\cleardoublepage
+
+%	Main
+\pagenumbering{arabic}
+\include{Contents/001/PhD_001}
+\include{Contents/002/PhD_002}
+
+%	Delete "Appendix"
+\renewcommand{\theequation}{\Alph{section}.\arabic{equation}}
+\renewcommand{\thefigure}{\Alph{section}.\arabic{figure}}
+\renewcommand{\thetable}{\Alph{section}.\arabic{table}}
+
+%	Appendix
+\appendix
+\include{Contents/AppA/PhD_AppA}
+
+%	Bibliography
+%	Please compile LaTeX -> BibTex -> LaTeX -> LaTeX
+\Noheaderfooter
+%\bibliographystyle{Harada-san/Harada-san}
+\bibliographystyle{Harada-san/Harada-san_Sakai}
+\bibliography{Bibliography}
+\newpage
+
+\end{document}
