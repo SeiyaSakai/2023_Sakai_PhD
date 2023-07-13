@@ -1015,7 +1015,7 @@ FUNCTION {phdthesis}
   new.block
   format.title "title" output.check
   new.block
-  "PhD thesis" format.thesis.type output.nonnull
+  "Ph.D. Thesis," format.thesis.type output.nonnull
   school "school" output.check
   format.date "year" output.check
   address output
