@@ -102,4 +102,128 @@ The average field intensity can be reduced to 32 mG with Helmholtz coils, result
 	\caption[Schematic view of Helmholtz coils]{\label{002_F08_Coil} Schematic view of Helmholtz coils~\cite{1998YamaguchiPhD}.}
 \end{figure}
 
+\subsection{Observation phase}
+\vs\hs The observation phase of SK is categorized into seven, from SK-I to SK-VII.
+Each observation phase is described below.\\
+\\
+\textbf{SK-I}\\
+\hs SK-I started in April 1996 and ended in July 2001.
+In ID, 11,146 PMTs were attached and the effective photocathode coverage of ID was 40\%.
+It was during the SK-I that we got the evidence for neutrino oscillation~\cite{1998Fukuda}.\\
+\\
+\textbf{SK-II}\\
+\hs In November 12th, 2001, one bottom PMT broke when ultrapure water was filled into SK detector after finishing the detector maintenance.
+Due to the shockwave generated at that time, other PMTs were broken in a chain.
+As a result, it became a serious accident that 6,779 ID PMTs and 1,017 OD PMTs were lost.
+In SK-II, which started in October 2002 and ended in October 2005, the observation was performed using 5,182 remained and spare ID PMTs and 1,885 remained and new OD PMTs.
+The effective photocathode coverage of ID was 19\%.
+Since SK-II, each ID PMT has been covered with a shockwave prevention case.
+The case consists of an acrylic that covers the photocathode and Fiber Reinforced Plastic (FRP) case that covers parts other than the photocathode.
+The case not only prevents shockwave but also increases the water pressure resistance of the PMT.
+The picture of a shockwave prevention case is shown in Figure~\ref{002_F09_Case}.\\
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=8cm]{Figures/002/F09_Case}
+	\caption[Picture of a shockwave prevention case]{\label{002_F09_Case} Picture of a shockwave prevention case~\cite{SKaccident}.}
+\end{figure}
+
+\textbf{SK-III}\\
+\hs SK-III started in July 2006 and ended in August 2008.
+Since SK-III, the number of ID PMTs has been 11,129 and the effective photocathode coverage of ID has been 40\%.
+The reason why the number of ID PMTs is reduced by 17 compared to SK-I is that ID PMTs cannot be installed at the edge of the detector because the size of the shockwave prevention case is large.\\
+\\
+\textbf{SK-IV}\\
+\hs In September 2008, the data acquisition system was renewed from Analog Timing Module (ATM) to QTC-Based Electronics with Ethernet (QBEE) and SK-IV started~\cite{2009Nishino}.
+QTC stands for charge-to-time converter.
+The renewal of the system allows us to open the data acquisition time window until 535 $\mu$s from the trigger timing and enabled to search neutron signals~\cite{2009Watanabe}.
+SK-IV continued until June 2018 and is longest phase at this time.\\
+\\
+\textbf{SK-V}\\
+\hs The tank refurbishment work toward the SK-Gd experiment was conducted between SK-IV and SK-V.
+The purpose of the work was the water stop reinforcement of the tank, the piping improvement in the tank and the PMT replacement.
+After finishing the work, SK-V started in January 2019 and ended in July 2020.\\
+\\
+\textbf{SK-VI}\\
+\hs In July 2020, we dissolved 13.2 tons of Gd$_{\text{2}}$(SO$_{\text{4}}$)$_{\text{3}}\,\cdot\,$8H$_{\text{2}}$O (we introduced 0.011\% of Gd) into the SK tank and SK-VI (the SK-Gd experiment) started.
+The time constant of neutron capture at this Gd concentration is about 115 $\mu$s~\cite{2022Abe}.
+SK-VI continued until June 2022.\\
+\\
+\textbf{SK-VII}\\
+\hs In June 2022, we additionally dissolved 27.3 tons of Gd$_{\text{2}}$(SO$_{\text{4}}$)$_{\text{3}}\,\cdot\,$8H$_{\text{2}}$O into the SK tank and SK-VII started.
+The Gd concentration is comparable to 0.03\%.
+The time constant of neutron capture at this Gd concentration is about 62 $\mu$s.\\
+\\
+\hs The information of each observation phase is summarized in Table~\ref{002_Tab:phase}.
+
+\begin{table}[h]
+	\caption[Information of each observation phase]{\label{002_Tab:phase} Information of each observation phase.}
+	\centering
+	\vs
+	\begin{tabular}{lrrr}
+		\hline\hline
+		Phase&SK-I&SK-II&SK-III\\
+		\hline
+		Start&Apr. 1996&Oct. 2002&Jul. 2006\\
+		End&Jul. 2001&Oct. 2005&Sep. 2008\\
+		\# of ID PMTs (Coverage)&11,146 (40\%)&5,182 (19\%)&11,129 (40\%)\\
+		\# of OD PMTs&1,885&1,885&1,885\\
+		Electronics&ATM&ATM&ATM\\
+		Gd concentration&0\%&0\%&0\%\\
+		\hline\hline
+	\end{tabular}
+	\\
+	\vs
+	\begin{tabular}{lrrrr}
+		\hline\hline
+		Phase&SK-IV&SK-V&SK-VI&SK-VII\\
+		\hline
+		Start&Sep. 2008&Jan. 2019&Jul. 2020&Jun. 2022\\
+		End&Jun. 2018&Jul. 2020&Jun. 2022&-\\
+		\# of ID PMTs (Coverage)&11,129 (40\%)&11,129 (40\%)&11,129 (40\%)&11,129 (40\%)\\
+		\# of OD PMTs&1,885&1,885&1,885&1,885\\
+		Electronics&QBEE&QBEE&QBEE&QBEE\\
+		Gd concentration&0\%&0\%&0.011\%&0.03\%\\
+		\hline\hline
+	\end{tabular}
+\end{table}
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=8cm]{Figures/002/F10_Cherenkov}
+	\caption[Schematic view of Cherenkov radiation]{\label{002_F10_Cherenkov} Schematic view of Cherenkov radiation~\cite{2015Yamamoto}.}
+\end{figure}
+
+\subsection{Detection principle}
+\vs\hs When the speed of the charged particle passing through the dielectric medium is faster than the speed of light in the medium, photons are radiated conically along the track of the particle.
+This phenomenon is called ``Cherenkov radiation'', and the radiated photons are called ``Cherenkov photons''.
+Figure~\ref{002_F10_Cherenkov} shows the schematic view of Cherenkov radiation.
+In Figure~\ref{002_F10_Cherenkov}, the charged particle with velocity $v$ moves distance $vt={v \over c}ct=\beta ct$ in time $t$, where $c$ is the speed of light in vacuum and $\beta={v \over c}$ is the ratio of $v$ and $c$.
+While the Cherenkov photon moves distance ${c \over n}t$ in time $t$, where $n$ is the refractive index of the dielectric medium.
+Therefore, when the angle between the direction of charged particle and the direction of Cherenkov photon is defined as $\theta_{\text{C}}$, the next formula is established,
+\begin{eqnarray}\label{002_Eq_Che}
+	\cos\theta_{\text{C}}={{c \over n}t \over \beta ct}={\text{1} \over n\beta}.
+\end{eqnarray}
+In Equation (\ref{002_Eq_Che}), assuming that $n=\,$1.34, which is the refractive index of water, and $\beta=\,$1, $\theta_{\text{C}}$ becomes about 42$^{\circ}$.
+Therefore, in water, the maximum angle between the direction of charged particle and the direction of Cherenkov angle is about 42$^{\circ}$.\\
+\hs The energy $E$ required for the charged particle with rest mass $m$ to emit Cherenkov photons (Cherenkov threshold) is
+\begin{eqnarray}
+	E={mc^{\text{2}} \over \sqrt{\text{1}-\beta^{\text{2}}}}\geq{mc^{\text{2}} \over \sqrt{\text{1}-\Big({\text{1} \over n}\Big)^{\text{2}}}}={nmc^{\text{2}} \over \sqrt{n^{\text{2}}-\text{1}}}.
+\end{eqnarray}
+The Cherenkov threshold of main charged particles is summarized in Table~\ref{002_Tab:Che}.
+
+\begin{table}[h]
+	\caption[Cherenkov threshold of main charged particles]{\label{002_Tab:Che} Cherenkov threshold of main charged particles~\cite{2022Workman}. $m$ is rest mass and $E$ is Cherenkov threshold. Here $n=\,$1.34 is assumed.}
+	\centering
+	\vs
+	\begin{tabular}{lrrrrr}
+		\hline\hline
+		Charged particle&e$^{\pm}$&$\mu^{\pm}$&$\pi^{\pm}$&K$^{\pm}$&p\\
+		\hline
+		$m$ [MeV$/c^{\text{2}}$]&0.511&105.658&139.570&493.677&938.272\\
+		$E$ [MeV]&0.768&158.730&209.676&741.652&1,409.568\\
+		\hline\hline
+	\end{tabular}
+\end{table}
+
 \newpage
