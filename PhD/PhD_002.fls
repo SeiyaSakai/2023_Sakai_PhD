@@ -1,7 +1,0 @@
-PWD /Users/sakaiseiya/Desktop/2024/Doctoral_Dissertation/PhD
-INPUT /usr/local/texlive/2018/texmf.cnf
-INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
-INPUT /usr/local/texlive/2018/texmf.cnf
-INPUT /usr/local/texlive/2018/texmf-var/web2c/eptex/platex.fmt
-INPUT Contents/002/PhD_002.tex
-OUTPUT PhD_002.log

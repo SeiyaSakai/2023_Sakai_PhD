@@ -102,7 +102,7 @@ The average field intensity can be reduced to 32 mG with Helmholtz coils, result
 	\caption[Schematic view of Helmholtz coils]{\label{002_F08_Coil} Schematic view of Helmholtz coils~\cite{1998YamaguchiPhD}.}
 \end{figure}
 
-\subsection{Observation phase}
+\subsection{Observation phase}\label{002_Obs_pha}
 \vs\hs The observation phase of SK is categorized into seven, from SK-I to SK-VII.
 Each observation phase is described below.\\
 \\
@@ -190,15 +190,18 @@ The time constant of neutron capture at this Gd concentration is about 62 $\mu$s
 
 \begin{figure}[tbp]
 	\centering
-	\includegraphics[width=8cm]{Figures/002/F10_Cherenkov}
-	\caption[Schematic view of Cherenkov radiation]{\label{002_F10_Cherenkov} Schematic view of Cherenkov radiation~\cite{2015Yamamoto}.}
+	\includegraphics[width=15cm]{Figures/002/F12_Cherenkov}
+	\caption[Schematic view of Cherenkov radiation]{\label{002_F12_Cherenkov} Schematic view of Cherenkov radiation~\cite{2015Yamamoto}.}
 \end{figure}
 
 \subsection{Detection principle}
 \vs\hs When the speed of the charged particle passing through the dielectric medium is faster than the speed of light in the medium, photons are radiated conically along the track of the particle.
 This phenomenon is called ``Cherenkov radiation'', and the radiated photons are called ``Cherenkov photons''.
-Figure~\ref{002_F10_Cherenkov} shows the schematic view of Cherenkov radiation.
-In Figure~\ref{002_F10_Cherenkov}, the charged particle with velocity $v$ moves distance $vt={v \over c}ct=\beta ct$ in time $t$, where $c$ is the speed of light in vacuum and $\beta={v \over c}$ is the ratio of $v$ and $c$.
+Figure~\ref{002_F12_Cherenkov} shows the schematic view of Cherenkov radiation.
+The Cherenkov photons are projected in a ring as shown in left side of Figure~\ref{002_F12_Cherenkov}.
+The ring is called ``Cherenkov ring''.
+In the SK, the energy, generated position, direction and the kind of the charged particle are reconstructed using the time, quantity of charge and Cherenkov ring pattern information that ID PMTs received.
+In right side of Figure~\ref{002_F12_Cherenkov}, the charged particle with velocity $v$ moves distance $vt={v \over c}ct=\beta ct$ in time $t$, where $c$ is the speed of light in vacuum and $\beta={v \over c}$ is the ratio of $v$ and $c$.
 While the Cherenkov photon moves distance ${c \over n}t$ in time $t$, where $n$ is the refractive index of the dielectric medium.
 Therefore, when the angle between the direction of charged particle and the direction of Cherenkov photon is defined as $\theta_{\text{C}}$, the next formula is established,
 \begin{eqnarray}\label{002_Eq_Che}
@@ -210,9 +213,14 @@ Therefore, in water, the maximum angle between the direction of charged particle
 \begin{eqnarray}
 	E={mc^{\text{2}} \over \sqrt{\text{1}-\beta^{\text{2}}}}\geq{mc^{\text{2}} \over \sqrt{\text{1}-\Big({\text{1} \over n}\Big)^{\text{2}}}}={nmc^{\text{2}} \over \sqrt{n^{\text{2}}-\text{1}}}.
 \end{eqnarray}
-The Cherenkov threshold of main charged particles is summarized in Table~\ref{002_Tab:Che}.
+The Cherenkov threshold of main charged particles is summarized in Table~\ref{002_Tab:Che}.\\
+\hs Assuming that the wavelength region of Cherenkov photons is from $\lambda_{\text{1}}$ to $\lambda_{\text{2}}$, the number of Cherenkov photons $N$ emitted per unit length $x$ when the particle with charge $z$ passes through the medium is
+\begin{eqnarray}
+	{dN \over dx}=\text{2}\pi\alpha z^{\text{2}}\sin ^{\text{2}} \theta_{\text{C}}\bigg({\text{1} \over \lambda_{\text{1}}}-{\text{1} \over \lambda_{\text{2}}}\bigg),
+\end{eqnarray}
+where $\alpha$ is the fine-structure constant.
 
-\begin{table}[h]
+\begin{table}[tbp]
 	\caption[Cherenkov threshold of main charged particles]{\label{002_Tab:Che} Cherenkov threshold of main charged particles~\cite{2022Workman}. $m$ is rest mass and $E$ is Cherenkov threshold. Here $n=\,$1.34 is assumed.}
 	\centering
 	\vs
@@ -225,5 +233,125 @@ The Cherenkov threshold of main charged particles is summarized in Table~\ref{00
 		\hline\hline
 	\end{tabular}
 \end{table}
+
+\subsection{Water purification system}
+\vs\hs The 50 kilotons ultrapure water of the SK is made from the groundwater of the Kamioka mine.
+The groundwater contains the dust, bacteria and radioactive impurities.
+These impurities should be removed to avoid decreasing the water transparency and increasing low energy backgrounds.
+In the SK, these impurities are removed by circulating and purifying the ultrapure water using the water purification system at a flow rate of 120 m$^{\text{3}}/$h.
+Figure~\ref{002_F13_Water} shows the schematic view of water purification system.
+This system consists of three systems: the dissolving system, the pretreatment system and the re-circulation system.
+The dissolving system and the pretreatment system are used during Gd loading, while the re-circulation system is used during both Gd loading and data taking.
+Here each component of re-circulation system is described below.
+\begin{itemize}
+	\item UV total organic carbon reduction lamp (TOC): TOC lamp oxidatively decomposes carbon and other compounds. These are eventually decomposed into water and carbon dioxide.
+	\item Heat exchanger (HE): High water temperature causes the bacterial growth, the decrease of water transparency and the increase of PMT dark noise. HE keeps the water temperature around 13 $^{\circ}$C at a precision better than 0.01 $^{\circ}$C.
+	\item Strongly acidic cation exchange resin (C-Ex Resin): C-Ex Resin removes positively charged impurities, and radium ions in particular, while preserving the dissolved gadolinium ions (Gd$^{\text{3}+}$).
+	\item Strongly basic anion exchange resin (A-Ex Resin): A-Ex Resin removes negatively charged impurities while preserving the dissolved sulfate ions (SO$^{\text{2}-}_{\text{4}}$).
+	\item One micron filter (1 $\mu$m): 1 $\mu$m filter removes the dusts larger than 1 $\mu$m.
+	\item UV sterilizer (UV): UV sterilizer kills the bacteria.
+	\item Ultrafiltration modules (UF): UF modules remove tiny dusts.
+	\item Membrane degasifier (MD): MD removes radon dissolved in the ultrapure water.
+\end{itemize}
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=15cm]{Figures/002/F13_Water}
+	\caption[Schematic view of water purification system]{\label{002_F13_Water} Schematic view of water purification system~\cite{2022Abe}. The dissolving system and the pretreatment system are used during Gd loading, while the re-circulation system is used during both Gd loading and data taking.}
+\end{figure}
+
+\subsection{Air purification system}
+\vs\hs Most of radioactive backgrounds come from radon, which is rich in the rock of the Kamioka mine.
+To reduce radioactive backgrounds, radon in the air should be reduced as much as possible.\\
+\hs Figure~\ref{002_F15_AirSeason} shows the typical radon concentration in the air at the SK over a year.
+Radon concentration in the air of the mine is 2,000 - 3,000 Bq$/$m$^{\text{3}}$ during the warm season, from May to October, while the concentration is 100 - 300 Bq$/$m$^{\text{3}}$ in the cold season, from November to April.
+This is because the airflow inside the mine changes depending on the temperature outside the mine.
+To keep the concentration below 100 Bq$/$m$^{\text{3}}$ inside the experimental area, fresh air is continuously blown at a flow rate of 10 m$^{\text{3}}/$min from outside the mine (Radon Hut) to the experimental area through an air duct.
+The flow rate makes the air pressure inside the experimental area higher than outside, minimizing the entry of the air outside the experimental area.
+As a result, the concentration inside the experimental area is kept at 30 - 50 Bq$/$m$^{\text{3}}$ throughout the year, as shown in Figure~\ref{002_F15_AirSeason}.\\
+\hs However, the radon concentration inside the experimental area is still too high for observations with low radioactive backgrounds.
+Therefore, the fresh air is purified using the air purification system, then the purified air is supplied to the gap between the top of the SK tank and the water surface.
+Figure~\ref{002_F14_Air} shows the schematic view of air purification system.
+Each component of air purification system is described in Ref.~\cite{2015NakanoPhD}.
+The residual radon concentration in the purified air is a few mBq$/$m$^{\text{3}}$.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=12cm]{Figures/002/F15_AirSeason}
+	\caption[Typical radon concentration in the air at the SK over a year]{\label{002_F15_AirSeason} Typical radon concentration in the air at the SK over a year~\cite{2003Fukuda}. The solid line shows the concentration outside the experimental area. The dashed line shows the concentration inside the experimental area.}
+\end{figure}
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=15cm]{Figures/002/F14_Air}
+	\caption[Schematic view of air purification system]{\label{002_F14_Air} Schematic view of air purification system~\cite{2003Fukuda}. Each component of air purification system is described in Ref.~\cite{2015NakanoPhD}.}
+\end{figure}
+
+\subsection{Data acquisition system}
+\vs\hs As explained in Sec.~\ref{002_Obs_pha}, the data acquisition system was changed from ATM to QBEE in SK-IV.
+The data used in this thesis was acquired by QBEE.
+Therefore, the description of ATM is omitted in this thesis.\\
+\hs Figure~\ref{002_F18_DAQ} shows the schematic view of the data acquisition system after SK-IV.
+One QBEE board has 8 QTCs, and one QTC has 3 analog input channels for PMT signals.
+That is, one QBEE board has 24 analog input channels for PMT signals.
+Figure~\ref{002_F16_QTC} shows the block diagram of the QTC and its surroundings.
+Each analog input channel has three gain ranges: small, medium, and large.
+The gain ratio of small, medium, and large is set to 1, 1$/$7, and 1$/$49, respectively.
+Also, the charge dynamic range of small, medium, and large is 0.2 - 51 pC, 1 - 357 pC, and 5 - 2500 pC, respectively.
+The gain ratio is optimized to cover a wide charge dynamic range with reasonable resolution.
+When the charge is sent to a QBEE board, the QTC integrates the charge and generates the output signal with the width proportional to the integrated charge.
+Then the output signal is digitized by time-to-digital converter (TDC).
+The digitized signals are transferred to 20 front-end PCs, and sent to 10 merger PCs.
+In the merger PCs, the signals from all the front-end PCs are merged and the software trigger is applied.
+Details about the software trigger is described later.
+From the merger PCs, signals for triggered events are sent to an organizer PC and then written onto the disk for offline analysis.
+Details about the front-end PCs, merger in the merger PCs, the organizer PC, and the disk are described in Ref.~\cite{2010Yamada}.
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=15cm]{Figures/002/F18_DAQ}
+	\caption[Schematic view of the data acquisition system]{\label{002_F18_DAQ} Schematic view of the data acquisition system~\cite{2010Yamada}.}
+\end{figure}
+
+\begin{figure}[tbp]
+	\centering
+	\includegraphics[width=15cm]{Figures/002/F16_QTC}
+	\caption[Block diagram of the QTC and its surroundings]{\label{002_F16_QTC} Block diagram of the QTC and its surroundings~\cite{2009Nishino}. The output signal of each range (small, medium, or large) is generated by low voltage differential signaling (LVDS) drivers and digitized by time-to-digital converter (TDC).}
+\end{figure}
+
+\hs The software trigger process scans the signals sent to the merger PCs and searches the events satisfying the trigger conditions.
+A trigger is applied when the number of ID PMT hits within 200 ns, which corresponds to the time that a Cherenkov photon moves from the edge of the SK tank to other, is a certain value or more.
+Table~\ref{002_Tab:Tri} shows the trigger threshold and time width for recording PMT hits of each trigger type in SK-VI.
+There are four trigger types for ID: Super Low Energy (SLE), Low Energy (LE), High Energy (HE), and Super High Energy (SHE).
+Also, OD trigger is applied when the number of OD PMT hits within 200 ns is 22 or more.
+Basically, when a trigger is applied, all hits from $-$5 $\mu$s to 35 $\mu$s are recorded, where the trigger timing is 0 $\mu$s.
+However, in the case of SLE, all hits from $-$0.5 $\mu$s to 1.0 $\mu$s are recorded due to the high trigger rate.\\
+\hs From SK-IV, a special trigger, AFT, was installed to search delayed neutron capture signals.
+Previously, AFT trigger was applied when SHE trigger was applied and OD trigger was not applied to avoid the events by cosmic ray muons.
+However, from SK-V, the condition about OD trigger was removed to study the spallation events by cosmic ray muons.
+When AFT trigger is applied, all hits from 35 $\mu$s to 535 $\mu$s in addition to from $-$5 $\mu$s to 35 $\mu$s are recorded.
+
+\begin{table}[tbp]
+	\caption[Trigger threshold and time width for recording PMT hits of each trigger type in SK-VI]{\label{002_Tab:Tri} Trigger threshold and time width for recording PMT hits of each trigger type in SK-VI. $N_{\text{200, ID}}$ and $N_{\text{200, OD}}$ shows the number of ID or OD PMT hits within 200 ns.}
+	\centering
+	\vs
+	\begin{tabular}{ccc}
+		\hline\hline
+		Trigger type&Trigger threshold&Time width [$\mu$s]\\
+		\hline
+		SLE&$N_{\text{200, ID}}\ge$ 34&1.5\\
+		LE&$N_{\text{200, ID}}\ge$ 49&40\\
+		HE&$N_{\text{200, ID}}\ge$ 52&40\\
+		SHE&$N_{\text{200, ID}}\ge$ 60&40\\
+		OD&$N_{\text{200, OD}}\ge$ 22&40\\
+		\hline\hline
+	\end{tabular}
+\end{table}
+
+%\begin{figure}[tbp]
+%	\centering
+%	\includegraphics[width=12cm]{Figures/002/F17_QTCt}
+%	\caption[Timing chart for QTC operation]{\label{002_F17_QTCt} Timing chart for QTC operation~\cite{2009Nishino}.}
+%\end{figure}
 
 \newpage
