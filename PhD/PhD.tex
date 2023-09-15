@@ -17,7 +17,7 @@
 %--------------------------+
 
 %	(j / js)article, report, book, etc.
-\documentclass[12pt, twoside, titlepage]{article}
+\documentclass[11pt, twoside, titlepage]{article}
 
 %	Driver that generates PDF from DVI, Important to insert images
 \usepackage[dvipdfmx]{graphicx}
@@ -29,7 +29,7 @@
 \usepackage{fancyhdr}
 
 %	Space
-\usepackage[top=25truemm, bottom=25truemm, left=25truemm, right=25truemm]{geometry}
+\usepackage[top=25truemm, bottom=20truemm, left=25truemm, right=25truemm]{geometry}
 
 %	Size of section & subsection
 \usepackage{titlesec}
@@ -112,7 +112,7 @@ stepnumber      = 1,
 \newcommand{\vs}{\vspace{3mm}}
 
 %	Space between the lines
-\renewcommand{\baselinestretch}{1.15}
+\renewcommand{\baselinestretch}{1.1}
 
 %	Set of notes
 \renewcommand\thefootnote{\arabic{footnote}}
@@ -163,8 +163,8 @@ stepnumber      = 1,
 
 %	Main
 \pagenumbering{arabic}
-\include{Contents/001/PhD_001}
-\include{Contents/002/PhD_002}
+\include{Contents/Introduction/Introduction}
+\include{Contents/SK/SK}
 
 %	Delete "Appendix"
 \renewcommand{\theequation}{\Alph{section}.\arabic{equation}}
@@ -173,7 +173,7 @@ stepnumber      = 1,
 
 %	Appendix
 \appendix
-\include{Contents/App/PhD_App}
+\include{Contents/App/App}
 
 %	Bibliography
 %	Please compile LaTeX -> BibTex -> LaTeX -> LaTeX
