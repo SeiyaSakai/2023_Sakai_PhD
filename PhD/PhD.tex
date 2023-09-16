@@ -157,7 +157,9 @@ stepnumber      = 1,
 \setcounter{tocdepth}{3}
 \Noheaderfooter
 \tableofcontents
+\newpage
 \listoffigures
+\newpage
 \listoftables
 \cleardoublepage
 
@@ -165,6 +167,14 @@ stepnumber      = 1,
 \pagenumbering{arabic}
 \include{Contents/Introduction/Introduction}
 \include{Contents/SK/SK}
+\include{Contents/Calibration/Calibration}
+\include{Contents/Simulation/Simulation}
+\include{Contents/EventReco/EventReco}
+\include{Contents/EventRedu/EventRedu}
+\include{Contents/Model/Model}
+\include{Contents/NCQE/NCQE}
+\include{Contents/Results/Results}
+\include{Contents/Conclusion/Conclusion}
 
 %	Delete "Appendix"
 \renewcommand{\theequation}{\Alph{section}.\arabic{equation}}
