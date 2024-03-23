@@ -40,11 +40,19 @@
 %	Having to do with the position of image
 \usepackage{float}
 
-%	Amssymb & Amsmath
-\usepackage{amssymb, amsmath}
+%	Amssymb & Amsmath & Amsfonts
+\usepackage{amssymb, amsmath, amsfonts}
+
+%	Bold italic
+\usepackage{bm}
 
 %	Braket
 \usepackage{braket}
+
+%	Caption
+\usepackage{caption}
+\captionsetup[figure]{font=small}
+\captionsetup[table]{font=small}
 
 %	Comment
 \usepackage{comment}
@@ -61,6 +69,9 @@
 %	Listings
 \usepackage{listings}
 
+%	Multirow
+\usepackage{multirow}
+
 \lstset{
 language={C++}, 
 basicstyle      = {\tt\normalsize},
@@ -71,7 +82,8 @@ ndkeywordstyle  = {\tt\normalsize},
 stringstyle     = {\tt\normalsize},
 frame           = {tblr},
 breaklines      = true,
-breakindent     = 50.6pt,
+breakindent     = 45.8pt, % 11pt
+%breakindent    = 50.6pt, % 12pt
 captionpos      = b
 columns         = [l]{fullflexible},
 morecomment     = [l]{//},
@@ -106,9 +118,9 @@ stepnumber      = 1,
 \makeatother
 
 %	Important formulas
-\newcommand{\bd}{{\rm n} \to {\rm p}+{\rm e}^{-}+\overline{\nu}_{{\rm e}}}
-\newcommand{\ibd}{\overline{\nu}_{{\rm e}}\,+\,{\rm p} \to {\rm e}^{+}\,+\,{\rm n}}
-\newcommand{\hs}{\hspace{3mm}}
+\newcommand{\bd}{{\rm n} \to {\rm p}+{\rm e}^{-}+\bar{\nu}_{\rm e}}
+\newcommand{\ibd}{\bar{\nu}_{\rm e}\,+\,{\rm p} \to {\rm e}^{+}\,+\,{\rm n}}
+\newcommand{\hs}{\hspace{6mm}}
 \newcommand{\vs}{\vspace{3mm}}
 
 %	Space between the lines
@@ -131,9 +143,28 @@ stepnumber      = 1,
 }
 
 %	Title page
-\title{\fontsize{20pt}{40pt}\textbf{Measurement of the neutrino-oxygen}\\\textbf{neutral-current quasielastic cross section using}\\\textbf{atmospheric neutrinos in the SK-Gd experiment}}
-\author{{\Large Graduate School of Natural Science and Technology}\vspace{2mm}\\{\Large Okayama University}\vspace{10mm}\\ \fontsize{20pt}{40pt}\selectfont Seiya Sakai}
-\date{\vspace{3mm}{\Large March 1, 2024}}
+\title{
+\fontsize{17.28pt}{34.56pt}
+\textbf{Measurement of the neutrino-oxygen}\\
+\textbf{neutral-current quasielastic cross section}\\
+\textbf{and study of nucleon-nucleus interaction model}\\
+\textbf{using atmospheric neutrino data in the SK-Gd experiment}
+\vspace{10mm}
+}
+\author{
+{\LARGE March 15, 2024}                \vspace{3mm}\\
+{\LARGE Seiya Sakai}                   \vspace{20mm}\\
+{\LARGE Graduate School of}            \vspace{3mm}\\
+{\LARGE Natural Science and Technology}\vspace{3mm}\\
+{\LARGE (Doctor's Course)}             \vspace{3mm}\\
+{\LARGE OKAYAMA UNIVERSITY}
+}
+\date{}
+
+%	Title page
+%\title{\fontsize{20pt}{40pt}\textbf{Measurement of the neutrino-oxygen}\\\textbf{neutral-current quasielastic cross section using}\\\textbf{atmospheric neutrinos in the SK-Gd experiment}}
+%\author{{\Large Graduate School of Natural Science and Technology}\vspace{2mm}\\{\Large Okayama University}\vspace{10mm}\\ \fontsize{20pt}{40pt}\selectfont Seiya Sakai}
+%\date{\vspace{3mm}{\Large March 1, 2024}}
 
 %------------+
 %  Document  |
@@ -167,13 +198,12 @@ stepnumber      = 1,
 \pagenumbering{arabic}
 \include{Contents/Introduction/Introduction}
 \include{Contents/SK/SK}
-\include{Contents/Calibration/Calibration}
 \include{Contents/Simulation/Simulation}
-\include{Contents/EventReco/EventReco}
-\include{Contents/EventRedu/EventRedu}
+\include{Contents/Reconstruction/Reconstruction}
+\include{Contents/Calibration/Calibration}
+\include{Contents/Selection/Selection}
 \include{Contents/Model/Model}
 \include{Contents/NCQE/NCQE}
-\include{Contents/Results/Results}
 \include{Contents/Conclusion/Conclusion}
 
 %	Delete "Appendix"
@@ -183,7 +213,8 @@ stepnumber      = 1,
 
 %	Appendix
 \appendix
-\include{Contents/App/App}
+\include{Contents/App/App_likelihood}
+\include{Contents/App/App_Other}
 
 %	Bibliography
 %	Please compile LaTeX -> BibTex -> LaTeX -> LaTeX

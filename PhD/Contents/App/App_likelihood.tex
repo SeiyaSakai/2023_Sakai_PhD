@@ -1,0 +1,32 @@
+
+%
+%	Appendix
+%
+
+\section{Chi-square using the Poisson-likelihood}\label{App_likelihood}
+\Headerfooter{Chi-square using the Poisson-likelihood}
+\vs\hs
+$L(x,y)$ is defined as
+\begin{eqnarray}
+	L(x,y)=\prod_{i=1}^{{\rm bin}} {{y_{i}}^{x_{i}} \over x_{i}!}e^{-y_{i}},
+\end{eqnarray}
+where ${\rm bin}$ is the number of bins in a histogram.
+The chi-square using the Poisson-likelihood $\chi^{2}$ is calculated as
+\begin{eqnarray}
+	\chi^{2}&=&-2\,{\rm ln}\,{L(n,\mu) \over L(n,n)} \nonumber\\
+					&=&-2\{{\rm ln}\,L(n,\mu) - {\rm ln}\,L(n,n)\} \nonumber\\
+					&=&-2\Biggl\{{\rm ln}\Biggl(\prod_{i=1}^{{\rm bin}} {{\mu_{i}}^{n_{i}} \over n_{i}!}e^{-\mu_{i}}\Biggr) - {\rm ln}\Biggl(\prod_{i=1}^{{\rm bin}} {{n_{i}}^{n_{i}} \over n_{i}!}e^{-n_{i}}\Biggr)\Biggr\} \nonumber\\
+					&=&-2\Biggl\{\sum_{i=1}^{{\rm bin}} {\rm ln}\Biggl({{\mu_{i}}^{n_{i}} \over n_{i}!}e^{-\mu_{i}}\Biggr) - \sum_{i=1}^{{\rm bin}} {\rm ln}\Biggl({{n_{i}}^{n_{i}} \over n_{i}!}e^{-n_{i}}\Biggr)\Biggr\} \nonumber\\
+					&=&-2\Biggl[\sum_{i=1}^{{\rm bin}} \big\{{\rm ln}({\mu_{i}}^{n_{i}}) + {\rm ln}(e^{-\mu_{i}}) - {\rm ln}(n_{i}!)\big\} - \sum_{i=1}^{{\rm bin}} \big\{{\rm ln}({n_{i}}^{n_{i}}) + {\rm ln}(e^{-n_{i}}) - {\rm ln}(n_{i}!)\big\}\Biggr] \nonumber\\
+					&=&-2\Biggl[\sum_{i=1}^{{\rm bin}} \big\{n_{i}\,{\rm ln}\,\mu_{i} - \mu_{i} - {\rm ln}(n_{i}!)\big\} - \sum_{i=1}^{{\rm bin}} \big\{n_{i}\,{\rm ln}\,n_{i} - n_{i} - {\rm ln}(n_{i}!)\big\}\Biggr] \nonumber\\
+					&=&-2\sum_{i=1}^{{\rm bin}} \big\{n_{i}\,{\rm ln}\,\mu_{i} - \mu_{i} - {\rm ln}(n_{i}!) - n_{i}\,{\rm ln}\,n_{i} + n_{i} + {\rm ln}(n_{i}!)\big\} \nonumber\\
+					&=&2\sum_{i=1}^{{\rm bin}} \bigg(\mu_{i} - n_{i} + n_{i}\,{\rm ln}\,{n_{i} \over \mu_{i}}\bigg), \label{chi2}
+\end{eqnarray}
+where $n$ is the observed number of events and $\mu$ is the expected number of events\footnote{Even if the chi-square using the Poisson-likelihood is defined as $\chi^{2}=-2\,{\rm ln}\,L(n,\mu)$, Equation~(\ref{chi2}) is derived by using the Stirling's approximation (${\rm ln}(n!) \sim n\,{\rm ln}\,n - n$).}.
+
+
+
+
+
+\newpage
+
